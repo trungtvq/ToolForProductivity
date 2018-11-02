@@ -48,7 +48,6 @@ namespace CheckPortOpen
             var port=ProcessingPort++;
             while (port <= this.Stop)
             { 
-                
 
                 using (TcpClient tcpClient = new TcpClient(AddressFamily.InterNetwork))
                 try
