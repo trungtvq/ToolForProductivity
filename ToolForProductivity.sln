@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPortOpen", "CheckPortO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoL", "WoL\WoL.csproj", "{A96EB1AA-9A4D-4076-AA01-97B63B11F612}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RarMining", "RarMining\RarMining.csproj", "{BA42D0C4-4A96-4597-A36C-B4F2B430C42E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A96EB1AA-9A4D-4076-AA01-97B63B11F612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96EB1AA-9A4D-4076-AA01-97B63B11F612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A96EB1AA-9A4D-4076-AA01-97B63B11F612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA42D0C4-4A96-4597-A36C-B4F2B430C42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA42D0C4-4A96-4597-A36C-B4F2B430C42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA42D0C4-4A96-4597-A36C-B4F2B430C42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA42D0C4-4A96-4597-A36C-B4F2B430C42E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
