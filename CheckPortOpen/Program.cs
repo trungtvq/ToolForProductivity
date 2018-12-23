@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Timers;
 using Timer = System.Threading.Timer;
@@ -12,10 +13,16 @@ namespace CheckPortOpen
             Stopwatch stopWatch=new Stopwatch();
             stopWatch.Restart();
             SupportMultiThreadingCheckPort test = new SupportMultiThreadingCheckPort();
-            test.CheckPort("trungtvq.ddns.net",1, 1000,144);
+
+            List<int> t=test.CheckPort("bkpay.hcmut.edu.vn", 0, 60000,200);
+            Console.WriteLine(t.Count);
+            foreach (int i in t)
+            {
+                
+                Console.WriteLine("Open at:"+ i.ToString());
+            }
             Console.WriteLine("Elapsed time {0} ms", stopWatch.ElapsedMilliseconds);
 
-            Console.WriteLine("Hello World!");
             Console.ReadKey();
         }
     }

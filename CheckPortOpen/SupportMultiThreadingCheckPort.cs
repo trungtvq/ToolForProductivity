@@ -20,7 +20,8 @@ namespace CheckPortOpen
             this.Start = startPort;
             this.Stop = stopPort;
             this.HostAddress= Dns.GetHostAddresses(hostAddress)[0];
-            ThreadPool.SetMinThreads(1, 12);
+            bool x=ThreadPool.SetMinThreads(400, 400);
+            Console.WriteLine(x);
             var taskList = new List<Task>();
 
             for (var thread = 0; thread < numThread; thread++)
@@ -53,15 +54,19 @@ namespace CheckPortOpen
                 try
                 {
                         tcpClient.Connect(HostAddress,port);
-                        tcpClient.Close();
+                        
                         OpenedPortList.Add(port);
                         System.Diagnostics.Debug.WriteLine("Open at" + port);
 
                 }
                 catch
                 {
-                    System.Diagnostics.Debug.WriteLine("Close at" + port);
+                    //System.Diagnostics.Debug.WriteLine("Close at" + port);
                 }
+                finally
+                    {
+                        tcpClient.Close();
+                    }
                 port = ProcessingPort++;
 
             }
@@ -92,10 +97,11 @@ namespace CheckPortOpen
 
                 if (ar.AsyncWaitHandle.WaitOne(timeout, false) == false || newClient.Connected == false)
                 {
-                    throw new Exception();
+                    //throw new Exception();
+                    return;
                 }
                 OpenedPortList.Add(port);
-                System.Diagnostics.Debug.WriteLine("Open at" + port);
+                //System.Diagnostics.Debug.WriteLine("Open at" + port);
             }
             catch
             {
